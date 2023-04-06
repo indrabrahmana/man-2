@@ -24,3 +24,7 @@ Route::get('/template', function () {
 Route::get('/mapel', function () {
     return view('template.base');
 });
+
+Route::get('/siswa', function () {
+    return view('template.base');
+});
