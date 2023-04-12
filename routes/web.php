@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminWebController;
+use App\Http\Controllers\WebController;
+use App\Http\Controllers\DataSekolahController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/template', function () {
-    return view('template.base');
-});
 
-Route::get('/mapel', function () {
-    return view('template.base');
-});
+Route::prefix('admin')->group(function(){
+    // admin
+    Route::get('admin', [AdminWebController::class, 'showAdmin']);
+    Route::get('dashboard', [WebController::class, 'showDashboard']);
 
-Route::get('/siswa', function () {
-    return view('template.base');
+    // data sekolah
+    Route::get('datasekolah', [DataSekolahController::class, 'index']);
+    Route::get('datasekolah/create', [DataSekolahController::class, 'create']);
+    Route::post('datasekolah', [DataSekolahController::class, 'store']);
+    Route::get('datasekolah/{datasekolah}', [DataSekolahController::class, 'show']);
+    Route::get('datasekolah/{datasekolah}/edit', [DataSekolahController::class, 'edit']);
+    Route::put('datasekolah/{datasekolah}', [DataSekolahController::class, 'update']);
+    Route::delete('datasekolah/{datasekolah}', [DataSekolahController::class, 'destroy']);
+    Route::get('datasekolah/{datasekolah}/cetak_pdf', [DataSekolahController::class, 'cetak_pdf']);
+
+   
+    // admin
+    Route::get('admin', [AdminWebController::class, 'index']);
+    Route::get('admin/create', [AdminWebController::class, 'create']);
+    Route::post('admin', [AdminWebController::class, 'store']);
+    Route::get('admin/{admin}/edit', [AdminWebController::class, 'edit']);
+    Route::put('admin/{admin}', [AdminWebController::class, 'update']);
+    Route::delete('admin/{admin}', [AdminWebController::class, 'destroy']);
+
 });
