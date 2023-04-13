@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminWebController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\DataSekolahController;
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,24 @@ Route::prefix('admin')->group(function(){
     Route::delete('datasekolah/{datasekolah}', [DataSekolahController::class, 'destroy']);
     Route::get('datasekolah/{datasekolah}/cetak_pdf', [DataSekolahController::class, 'cetak_pdf']);
 
-   
+    //Kelas
+    Route::get('kelas', [KelasController::class, 'index']);
+    Route::get('kelas/create', [KelasController::class, 'create']);
+    Route::post('kelas', [KelasController::class, 'store']);
+    Route::get('kelas/{kelas}/edit', [KelasController::class, 'edit']);
+    Route::put('kelas/{kelas}', [KelasController::class, 'update']);
+    Route::delete('kelas/{kelas}', [KelasController::class, 'destroy']);   
+    
+    //Mapel
+    Route::get('mapel', [MapelController::class, 'index']);
+    Route::get('mapel/create', [MapelController::class, 'create']);
+    Route::post('mapel', [MapelController::class, 'store']);
+    Route::get('mapel/{mapel}/edit', [apelController::class, 'edit']);
+    Route::put('mapel/{mapel}', [MapelController::class, 'update']);
+    Route::delete('mapel/{mapel}', [MapelController::class, 'destroy']);   
+
+
+
     // admin
     Route::get('admin', [AdminWebController::class, 'index']);
     Route::get('admin/create', [AdminWebController::class, 'create']);
