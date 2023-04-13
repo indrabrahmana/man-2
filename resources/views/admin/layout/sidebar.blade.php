@@ -91,6 +91,22 @@ function checkRouteActive($route)
             </p>
           </a>
         </li>
+        <li class="nav-item {{ checkRouteActive('admin/kelas') }} {{ checkRouteActive('admin/kelas/create') }} {{ checkRouteActive('admin/kelas/{kelas}') }} {{ checkRouteActive('admin/datasekolah/{datasekolah}/edit') }}">
+          <a href="{{ url('admin/kelas') }}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+            Kelas
+            </p>
+          </a>
+        </li>
+        <li class="nav-item {{ checkRouteActive('admin/mapel') }} {{ checkRouteActive('admin/mapel/create') }} {{ checkRouteActive('admin/mapel/{mapel}') }} {{ checkRouteActive('admin/datasekolah/{datasekolah}/edit') }}">
+          <a href="{{ url('admin/mapel') }}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+          Mata Pelajaran
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

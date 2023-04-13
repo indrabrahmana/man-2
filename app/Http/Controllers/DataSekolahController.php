@@ -16,7 +16,7 @@ class DataSekolahController extends Controller
     {
        
         $data ['list_datasekolah'] = DataSekolah::all();
-        return view('admin.datasekolah.index');
+        return view('admin.datasekolah.index', $data);
     }
 
     /**

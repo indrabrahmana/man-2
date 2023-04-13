@@ -28,7 +28,7 @@
                             <label for="" class="control-label">Password</label>
                             <input type="password" class="form-control" name="password" required>
                         </div>
-                        <button class="btn btn-warning float-right"><i class="fa fa-save"></i> Simpan</button>
+                        <button class="btn btn-success float-right"><i class="fa fa-save"></i> Simpan</button>
                     </form>
                 </div>
             </div>

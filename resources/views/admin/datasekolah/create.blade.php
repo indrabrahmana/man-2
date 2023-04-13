@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-warning float-right mt-4"> <i class="fa fa-save"></i>
+                            <button class="btn btn-success float-right mt-4"> <i class="fa fa-save"></i>
                                 Simpan</button>
                         </form>
                     </div>
