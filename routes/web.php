@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminWebController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\DataSekolahController;
+use App\Http\Controllers\PesertaDidikController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,7 @@ use App\Http\Controllers\DataSekolahController;
 
 
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->group(function () {
     // admin
     Route::get('admin', [AdminWebController::class, 'showAdmin']);
     Route::get('dashboard', [WebController::class, 'showDashboard']);
@@ -32,7 +34,7 @@ Route::prefix('admin')->group(function(){
     Route::delete('datasekolah/{datasekolah}', [DataSekolahController::class, 'destroy']);
     Route::get('datasekolah/{datasekolah}/cetak_pdf', [DataSekolahController::class, 'cetak_pdf']);
 
-   
+
     // admin
     Route::get('admin', [AdminWebController::class, 'index']);
     Route::get('admin/create', [AdminWebController::class, 'create']);
@@ -40,5 +42,23 @@ Route::prefix('admin')->group(function(){
     Route::get('admin/{admin}/edit', [AdminWebController::class, 'edit']);
     Route::put('admin/{admin}', [AdminWebController::class, 'update']);
     Route::delete('admin/{admin}', [AdminWebController::class, 'destroy']);
+
+});
+
+Route::prefix('user')->group(function () {
+
+    // peserta didik
+    Route::get('pesertadidik', [PesertaDidikController::class, 'index']);
+    Route::get('pesertadidik/create', [PesertaDidikController::class, 'create']);
+    Route::post('pesertadidik', [PesertaDidikController::class, 'store']);
+    Route::get('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'show']);
+    Route::get('pesertadidik/{pesertadidik}/edit', [PesertaDidikController::class, 'edit']);
+    Route::put('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'update']);
+    Route::delete('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'destroy']);
+    Route::get('pesertadidik/{pesertadidik}/cetak_pdf', [PesertaDidikController::class, 'cetak_pdf']);
+
+
+
+
 
 });
