@@ -87,11 +87,11 @@
                     </a>
                 </li>
                 <li
-                    class="nav-item {{ checkRouteActive('user/pesertadidik') }} {{ checkRouteActive('user/pesertadidik/create') }} {{ checkRouteActive('user/pesertadidik/{pesertadidik}') }} {{ checkRouteActive('user/pesertadidik/{pesertadidik}/edit') }}">
-                    <a href="{{ url('user/pesertadidik') }}" class="nav-link">
+                    class="nav-item {{ checkRouteActive('user/datasiswa') }} {{ checkRouteActive('user/datasiswa/create') }} {{ checkRouteActive('user/datasiswa/{datasiswa}') }} {{ checkRouteActive('user/datasiswa/{datasiswa}/edit') }}">
+                    <a href="{{ url('user/datasiswa') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Data Peserta Didik
+                            Data Siswa
 
                         </p>
                     </a>

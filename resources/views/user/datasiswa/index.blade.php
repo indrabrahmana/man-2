@@ -3,7 +3,7 @@
     <div class="container-fluid mt-2">
         <div class="row">
             <div class="col-md-12">
-                <h5><strong>// Data Peserta Didik</strong></h5>
+                <h5><strong>// Data Siswa</strong></h5>
                 <div class="card mt-3">
                     <div class="card-body">
                         <a href="{{ url('admin/datasekolah/create') }}" class="btn btn-outline-success "><i
@@ -15,11 +15,10 @@
                                 <thead class="thead-default">
                                     <th>No</th>
                                     <th>Aksi</th>
+                                    <th>NIS</th>
                                     <th>NISN</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
-                                    <th>Jabatan</th>
-                                    <th>Tanggal Masuk</th>
                                 </thead>
                                 <tbody>
 

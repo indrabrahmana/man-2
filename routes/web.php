@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminWebController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\DataSekolahController;
-use App\Http\Controllers\PesertaDidikController;
+use App\Http\Controllers\DataSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,14 +48,14 @@ Route::prefix('admin')->group(function () {
 Route::prefix('user')->group(function () {
 
     // peserta didik
-    Route::get('pesertadidik', [PesertaDidikController::class, 'index']);
-    Route::get('pesertadidik/create', [PesertaDidikController::class, 'create']);
-    Route::post('pesertadidik', [PesertaDidikController::class, 'store']);
-    Route::get('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'show']);
-    Route::get('pesertadidik/{pesertadidik}/edit', [PesertaDidikController::class, 'edit']);
-    Route::put('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'update']);
-    Route::delete('pesertadidik/{pesertadidik}', [PesertaDidikController::class, 'destroy']);
-    Route::get('pesertadidik/{pesertadidik}/cetak_pdf', [PesertaDidikController::class, 'cetak_pdf']);
+    Route::get('siswa', [DataSiswaController::class, 'index']);
+    Route::get('siswa/create', [DataSiswaController::class, 'create']);
+    Route::post('siswa', [DataSiswaController::class, 'store']);
+    Route::get('siswa/{siswa}', [DataSiswaController::class, 'show']);
+    Route::get('siswa/{siswa}/edit', [DataSiswaController::class, 'edit']);
+    Route::put('siswa/{siswa}', [DataSiswaController::class, 'update']);
+    Route::delete('siswa/{siswa}', [DataSiswaController::class, 'destroy']);
+    Route::get('siswa/{siswa}/cetak_pdf', [DataSiswaController::class, 'cetak_pdf']);
 
 
 
