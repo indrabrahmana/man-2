@@ -3,44 +3,40 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{ url('admin/datasekolah') }}" class="btn btn-dark "><i class="fas fa-arrow-left">
+                <a href="{{ url('user/siswa') }}" class="btn btn-dark "><i class="fas fa-arrow-left">
                     </i> Kembali</a>
                 <div class="card mt-2">
                     <div class="card-header">
-                        <strong> Tambah Data Sekolah</strong>
+                        <strong> Tambah Data Siswa</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('admin/datasekolah') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('user/siswa') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grup">
-                                        <label for="">NIK</label>
-                                        <input type="text" class="form-control" name="nik" required>
+                                        <label for="">NIS</label>
+                                        <input type="number" class="form-control" name="nis" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grup">
-                                        <label for="">Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="nama" required>
+                                        <label for="">NISN</label>
+                                        <input type="number" class="form-control" name="nisn" required>
                                     </div>
                                 </div>
                             </div>
-
-                            <hr>
-                            <strong>Akun</strong>
-                            <hr>
                             <div class="row">
                                 <div class="col-md 6">
                                     <div class="form-grup">
-                                        <label for="">Email</label>
-                                        <input type="text" class="form-control" name="email" required>
+                                        <label for="">Nama Lengkap</label>
+                                        <input type="text" class="form-control" name="nama_lengkap" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grup">
-                                        <label for="">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
+                                        <label for="">Nama Panggilan</label>
+                                        <input type="text" class="form-control" name="nama_panggilan" required>
                                     </div>
                                 </div>
                             </div>
@@ -48,6 +44,7 @@
                                 Simpan</button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

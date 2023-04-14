@@ -41,23 +41,20 @@ Route::prefix('admin')->group(function () {
     Route::post('admin', [AdminWebController::class, 'store']);
     Route::get('admin/{admin}/edit', [AdminWebController::class, 'edit']);
     Route::put('admin/{admin}', [AdminWebController::class, 'update']);
-    Route::delete('admin/{admin}', [AdminWebController::class, 'destroy']);
+    Route::delete('admin/{admin}', [AdminWebController::class, 'delete']);
 
 });
 
 Route::prefix('user')->group(function () {
 
-    // peserta didik
+    // data siswa
     Route::get('siswa', [DataSiswaController::class, 'index']);
     Route::get('siswa/create', [DataSiswaController::class, 'create']);
     Route::post('siswa', [DataSiswaController::class, 'store']);
     Route::get('siswa/{siswa}', [DataSiswaController::class, 'show']);
     Route::get('siswa/{siswa}/edit', [DataSiswaController::class, 'edit']);
     Route::put('siswa/{siswa}', [DataSiswaController::class, 'update']);
-    Route::delete('siswa/{siswa}', [DataSiswaController::class, 'destroy']);
-    Route::get('siswa/{siswa}/cetak_pdf', [DataSiswaController::class, 'cetak_pdf']);
-
-
+    Route::delete('siswa/{siswa}', [DataSiswaController::class, 'delete']);
 
 
 

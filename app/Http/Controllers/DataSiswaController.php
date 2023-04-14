@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataSiswa;
 use Illuminate\Http\Request;
+use App\Models\DataSiswa;
 
 class DataSiswaController extends Controller
 {
@@ -16,7 +16,7 @@ class DataSiswaController extends Controller
     {
 
         $data['list_datasiswa'] = DataSiswa::all();
-        return view('user.dataSiswa.index');
+        return view('user.datasiswa.index', $data);
     }
 
     /**
@@ -27,7 +27,7 @@ class DataSiswaController extends Controller
     public function create()
     {
 
-        return view('user.DataSiswa.create');
+        return view('user.datasiswa.create');
     }
 
     /**
@@ -45,70 +45,28 @@ class DataSiswaController extends Controller
         $datasiswa->nama_panggilan = request('nama_panggilan');
         $datasiswa->save();
 
-        $datasiswa->handleUploadFoto();
-
-        return redirect('User/DataSiswa')->with('success', 'Data berhasil ditambahkan');
+        return redirect('user/siswa')->with('success', 'Data berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DataSiswa $DataSiswa)
-    {
 
-        $data['datase$DataSiswa'] = $DataSiswa;
-        return view('User.datase$DataSiswa.show', $data);
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(DataSiswa $DataSiswa)
     {
 
-        $data['DataSiswa'] = $DataSiswa;
-        return view('User.DataSiswa.edit', $data);
+        $data['datasiswa'] = $DataSiswa;
+        return view('user.datasiswa.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(DataSiswa $DataSiswa)
+
+
+
+    public function delete(DataSiswa $datasiswa)
     {
-        // $datapegawai->id = request()->id;
+        $datasiswa->delete();
 
-
-
-        return redirect('User/DataSiswa')->with('success', 'Data berhasil diubah');
+        return redirect('user/siswa');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DataSiswa $DataSiswa)
-    {
-        $DataSiswa->handleDelete();
-        $DataSiswa->delete();
 
-        return redirect('User/DataSiswa');
-    }
-
-    public function cetak_pdf(DataSiswa $DataSiswa)
-    {
-        $data['DataSiswa'] = $DataSiswa;
-        return view('User.DataSiswa.cetak_pdf', $data);
-    }
 }
