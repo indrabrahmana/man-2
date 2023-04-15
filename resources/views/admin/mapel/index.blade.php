@@ -38,7 +38,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{url('mapel/mapel', $mapel->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="{{url('mapel/mapel', $mapel->id)}}/edit" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
                                                 @include('mapel.utils.delete', ['url' => url('mapel/mapel', $mapel->id)])
                                             </div>
                                         </td>

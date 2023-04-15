@@ -38,7 +38,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{url('kelas/kelas', $kelas->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="{{url('kelas/kelas', $kelas->id)}}/edit" class="btn btn-successs"><i class="fa fa-edit"></i> Edit</a>
                                                 @include('kelas.utils.delete', ['url' => url('kelas/kelas', $kelas->id)])
                                             </div>
                                         </td>

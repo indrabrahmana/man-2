@@ -32,7 +32,7 @@
                                                             data-feather="check-square"></i> Lihat</a>
 
                                                     <a href="{{ url('admin/datasekolah', $datasekolah->id) }}/edit"
-                                                        class="btn btn-warning"><i class="fa fa-edit"
+                                                        class="btn btn-success"><i class="fa fa-edit"
                                                             data-feather="check-square"></i> Edit</a>
                                                     @include('admin.utils.delete', [
                                                         'url' => url('admin/datasekolah', $datasekolah->id),
