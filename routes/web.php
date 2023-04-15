@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminWebController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\DataSekolahController;
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,14 @@ Route::prefix('admin')->group(function(){
     Route::put('mapel/{mapel}', [MapelController::class, 'update']);
     Route::delete('mapel/{mapel}', [MapelController::class, 'destroy']);   
 
+     
+    //Nilai
+    Route::get('nilai', [NilaiController::class, 'index']);
+    Route::get('nilai/create', [NilaiController::class, 'create']);
+    Route::post('nilai', [NilaiController::class, 'store']);
+    Route::get('nilai/{nilai}/edit', [NilaiController::class, 'edit']);
+    Route::put('nilai/{nilai}', [NilaiController::class, 'update']);
+    Route::delete('nilai/{nilai}', [NilaiController::class, 'destroy']);   
 
 
     // admin

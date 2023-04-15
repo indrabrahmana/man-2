@@ -21,7 +21,7 @@ class MapelController extends Controller{
 
     function store(){
         $mapel = new Mapel;
-        $mapel->nama = request('nama');         
+        $mapel->nama = request('nama');       
         $mapel->save();
 
         
@@ -44,14 +44,14 @@ class MapelController extends Controller{
     }
 
     function update(Mapel $mapel){
-        $mapel->nama = request('nama');        
+        $mapel->nama = request('nama');     
         $mapel->save();
 
         
 
         
 
-        return redirect('admin/kelas')->with('success', 'Data Berhasil Diedit');
+        return redirect('admin/mapel')->with('success', 'Data Berhasil Diedit');
     
         
     }
